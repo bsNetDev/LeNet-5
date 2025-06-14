@@ -96,7 +96,7 @@ train_losses = []
 test_accuracies = []
 
 # Training
-for epoch in range(20):
+for epoch in range(50):
     model.train()
     running_loss = 0.0
     for batch_idx, (data, target) in enumerate(train_loader):
