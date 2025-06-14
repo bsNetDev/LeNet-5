@@ -48,18 +48,27 @@ device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 model = LeNet5().to(device)
 criterion = nn.CrossEntropyLoss()
 optimizer = optim.Adam(model.parameters(), lr=0.001)
+scheduler = torch.optim.lr_scheduler.StepLR(optimizer, step_size=7, gamma=0.5)
+
 
 raw_dataset = datasets.CIFAR10(root='./data', train=True, download=True, transform=transforms.ToTensor())
 mean, std = compute_mean_std(raw_dataset)
 
-# Data
-transform = transforms.Compose([
+train_transform = transforms.Compose([
+    transforms.RandomCrop(32, padding=4),
+    transforms.RandomHorizontalFlip(),
     transforms.ToTensor(),
     transforms.Normalize(mean, std)
 ])
 
-train_dataset = datasets.CIFAR10(root='./data', train=True, download=True, transform=transform)
-test_dataset = datasets.CIFAR10(root='./data', train=False, download=True, transform=transform)
+# Data
+test_transform = transforms.Compose([
+    transforms.ToTensor(),
+    transforms.Normalize(mean, std)
+])
+
+train_dataset = datasets.CIFAR10(root='./data', train=True, download=True, transform=train_transform)
+test_dataset = datasets.CIFAR10(root='./data', train=False, download=True, transform=test_transform)
 
 train_loader = DataLoader(train_dataset, batch_size=64, shuffle=True, num_workers=2)
 test_loader = DataLoader(test_dataset, batch_size=1000, shuffle=False, num_workers=2)
@@ -87,7 +96,7 @@ train_losses = []
 test_accuracies = []
 
 # Training
-for epoch in range(5):
+for epoch in range(20):
     model.train()
     running_loss = 0.0
     for batch_idx, (data, target) in enumerate(train_loader):
@@ -139,6 +148,7 @@ for epoch in range(5):
         ax.set_title("Confusion Matrix")
         writer.add_figure("ConfusionMatrix/Final_Epoch", fig, global_step=epoch)
         plt.close(fig)
+    scheduler.step()
 writer.close()
 
 # Plotting

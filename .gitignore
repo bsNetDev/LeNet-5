@@ -21,3 +21,36 @@ __pycache__/
 
 # VS Code
 .vscode/
+data/FashionMNIST/raw/t10k-images-idx3-ubyte
+data/FashionMNIST/raw/t10k-images-idx3-ubyte.gz
+data/FashionMNIST/raw/t10k-labels-idx1-ubyte
+data/FashionMNIST/raw/t10k-labels-idx1-ubyte.gz
+data/FashionMNIST/raw/train-images-idx3-ubyte
+data/FashionMNIST/raw/train-images-idx3-ubyte.gz
+data/FashionMNIST/raw/train-labels-idx1-ubyte
+data/FashionMNIST/raw/train-labels-idx1-ubyte.gz
+runs/lenet5/events.out.tfevents.1748801678.bad-mofo.2710.0
+runs/lenet5/events.out.tfevents.1748803975.bad-mofo.9666.0
+runs/lenet5_fashionmnist/events.out.tfevents.1748805154.bad-mofo.13551.0
+runs/lenet5_CIFAR10/events.out.tfevents.1749904455.bad-mofo.27595.0
+runs/lenet5_CIFAR10/events.out.tfevents.1749904271.bad-mofo.26408.0
+runs/lenet5_CIFAR10/events.out.tfevents.1749904202.bad-mofo.25576.0
+runs/lenet5_CIFAR10/events.out.tfevents.1749903805.bad-mofo.23015.0
+runs/lenet5_CIFAR10/events.out.tfevents.1749903845.bad-mofo.23747.0
+runs/lenet5_CIFAR10/events.out.tfevents.1749903772.bad-mofo.22314.0
+runs/lenet5_CIFAR10/events.out.tfevents.1749903736.bad-mofo.21612.0
+runs/lenet5_CIFAR10/events.out.tfevents.1749903703.bad-mofo.20920.0
+runs/lenet5_CIFAR10/events.out.tfevents.1749903597.bad-mofo.19972.0
+runs/lenet5_CIFAR10/events.out.tfevents.1749903496.bad-mofo.19038.0
+runs/lenet5_CIFAR10/events.out.tfevents.1749903320.bad-mofo.17863.0
+runs/lenet5_CIFAR10/events.out.tfevents.1749903203.bad-mofo.17286.0
+runs/lenet5_CIFAR10/events.out.tfevents.1749902899.bad-mofo.15759.0
+runs/lenet5_CIFAR10/events.out.tfevents.1749902464.bad-mofo.13237.0
+data/cifar-10-batches-py/test_batch
+data/cifar-10-batches-py/readme.html
+data/cifar-10-batches-py/data_batch_5
+data/cifar-10-batches-py/data_batch_4
+data/cifar-10-batches-py/data_batch_3
+data/cifar-10-batches-py/data_batch_2
+data/cifar-10-batches-py/data_batch_1
+data/cifar-10-batches-py/batches.meta
